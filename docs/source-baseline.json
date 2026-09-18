@@ -1,0 +1,246 @@
+{
+  "originalSchema": 17,
+  "independentSchema": 18,
+  "baselineFiles": [
+    {
+      "path": "src/app.ts",
+      "sha256": "8825885d705ee2b85df0ad1f24060c8ce1529e1ae275a0f8ba9eb3b984e0376c"
+    },
+    {
+      "path": "src/cli.ts",
+      "sha256": "6c6e006e24d50d07e9bdc6b125397537ec07bf4487b698846ecce2af2c8b8ad3"
+    },
+    {
+      "path": "src/pipeline.ts",
+      "sha256": "5ee8b7b6983f5a27122de718fec8820888c372fcd35837360053e402169b2dbf"
+    },
+    {
+      "path": "src/amazon/parsing.ts",
+      "sha256": "2946cca8d92b9577aa803820d85dbadc3242a484f2f7e124ccb49cbcfd7b11b4"
+    },
+    {
+      "path": "src/amazon/product-seller.ts",
+      "sha256": "9dee5c73a2814d15df7b8a52d910931e618cfc32d3b4b15c968f3b69f03f80d4"
+    },
+    {
+      "path": "src/browser/context.ts",
+      "sha256": "29b4884fed51ba638654c57777056e1643a6b3666b60805dcaa4e318849109d6"
+    },
+    {
+      "path": "src/browser/fetch.ts",
+      "sha256": "662287ee24106fbc8037bca60c9e37d2f57fc9affb938014e29dbc3e205d7a1e"
+    },
+    {
+      "path": "src/browser/store-runtime.ts",
+      "sha256": "0cb5679527adb77455ece0189743f51d6ea6eda6a735958612d5e39754c8909e"
+    },
+    {
+      "path": "src/browser/store-scheduler.ts",
+      "sha256": "e95eac4adb89be47f378ac6302478755c9e8b974cdcfa62b78493b15442c9e67"
+    },
+    {
+      "path": "src/database/run-database.ts",
+      "sha256": "9f06518010fcd74395d3d1d4363211535f08d06edf4244c943ad1353f0daa6f8"
+    },
+    {
+      "path": "src/database/run-store.ts",
+      "sha256": "2d8b6293a7654b509d019b702a1447b396a890954006e6fb64c00d3a940d274c"
+    },
+    {
+      "path": "src/database/repositories/candidate-repository.ts",
+      "sha256": "8566138513f921c6e93a6c050824492e7c3c3d7155ac07ca554ff8352d97e57c"
+    },
+    {
+      "path": "src/database/repositories/detail-repository.ts",
+      "sha256": "ac401085059b870f429f660f35a87aacad329b45cf31983f089f8c80aa101fec"
+    },
+    {
+      "path": "src/database/repositories/enrichment-repository.ts",
+      "sha256": "f6c00f0fc4f7e3335f8f5cb959ab476a4ec666772d906c03478712c57a6ec87c"
+    },
+    {
+      "path": "src/database/repositories/export-repository.ts",
+      "sha256": "c989dc9d50686082ff9fe5b9f5714888e80025cd233421461102ecebe2a590f9"
+    },
+    {
+      "path": "src/database/repositories/product-repository.ts",
+      "sha256": "10dec11341093ee6c158cb66d1d1d5d7e57f2bb4b4babc86921155bcdca6aa14"
+    },
+    {
+      "path": "src/database/repositories/sales-repository.ts",
+      "sha256": "225f2d349609899467ec0a435b151370e0b74515f5105c540878e337cf1f9301"
+    },
+    {
+      "path": "src/database/repositories/source-repository.ts",
+      "sha256": "59db9738e5795c2225d5704296c1c75dc238d9fbb74cb72b19516b7f45e6120d"
+    },
+    {
+      "path": "src/database/repositories/store-repository.ts",
+      "sha256": "b55a094ffb9178aa33ed1c114751208f12b10b05cf00fefc69cf548bdf9f55bd"
+    },
+    {
+      "path": "src/export/excel.ts",
+      "sha256": "5a8da8a9582ee0e2bb2d34eaec33b05ced2582a97f38aa248f3ad40578c257de"
+    },
+    {
+      "path": "src/history/client.ts",
+      "sha256": "e8098af600908e1fe8e5b31dfa74f9161e75f26cbccdb7572b851fc563547db7"
+    },
+    {
+      "path": "src/history/config.ts",
+      "sha256": "6818b3bb1541fe100e41323e35bdf5144454ce09dd8f7a4fbc84ff9c13d362c0"
+    },
+    {
+      "path": "src/input/source-products.ts",
+      "sha256": "af35c14729e3273fd82a0024e2c07ac295e7935f6dba7870ba0db54c538072f5"
+    },
+    {
+      "path": "src/input/source-stores.ts",
+      "sha256": "1111e82a964a97910ed26161820829924d5eb0cb690eefc6e9b1aeb9aabddbbc"
+    },
+    {
+      "path": "src/mcp/client.ts",
+      "sha256": "ae38afa8379dd79c243d61ec3710d4e762b9cfa14d8310926379cf3848d4afa2"
+    },
+    {
+      "path": "src/shared/config.ts",
+      "sha256": "55dc15b4290df4152809fa3c16f5e300ff66ac9e5ef435b59bd0e526e0c03991"
+    },
+    {
+      "path": "src/shared/types.ts",
+      "sha256": "c68fe094d4e1919f5f4d33ddc2e20663b4dde1e733bb93e0d51e236977d9d632"
+    },
+    {
+      "path": "src/shared/utils.ts",
+      "sha256": "12f55bd1b1477ffe90ce38e69c8ef5fda43bbe03daa4d8b9ec51b7c1475e1df7"
+    },
+    {
+      "path": "src/stages/detail.ts",
+      "sha256": "a94ba72561a8294db1a4b84c870387e450965b1cd1a43a650e1a220b5ad1dbd3"
+    },
+    {
+      "path": "src/stages/enrich.ts",
+      "sha256": "351d8232132e5787ecf86dd66b705e697189e557fb425b008963dc9296e40275"
+    },
+    {
+      "path": "src/stages/filter.ts",
+      "sha256": "92fa021db76ab05a288f3e8ff2435c15b65c1be1fe3686de8b5a7cf42651a846"
+    },
+    {
+      "path": "src/stages/history-filter.ts",
+      "sha256": "cf8bba62df144cd209fe67ed1f8ce148ce71976f1e7f556b3293e46ef5a811e3"
+    },
+    {
+      "path": "src/stages/prefilter.ts",
+      "sha256": "5c6a3d78581d1199cee6a54404c9646197fcbc9056a0e9b0b82bc15558e4eeef"
+    },
+    {
+      "path": "src/stages/sales-7d.ts",
+      "sha256": "43a636b1c78512ace1111fdc60428eb07f68ac71cae00e680928e9b176ccfb91"
+    },
+    {
+      "path": "src/stages/seller-discovery.ts",
+      "sha256": "e5f3f8d9a273d70ba1871b4b515078a638b73830216f152bfb644dcaa3d289a9"
+    },
+    {
+      "path": "src/stages/stores.ts",
+      "sha256": "c52afcc0a558b11b6b4d13839026d0ec5d3a3056f4b53ca46ef86cb88de83243"
+    },
+    {
+      "path": "config/amazon-de-canary.yaml",
+      "sha256": "1ca3ba04c29c5008e6d580bd7ef1c2c7fb7708ee833ccc72870585a7d25e90d5"
+    },
+    {
+      "path": "config/amazon-de-seller-links-canary-20.yaml",
+      "sha256": "a54f275d1b882596dd4eb417177813325aa9d544cda2ac4f3aa44bac1033d9f5"
+    },
+    {
+      "path": "config/amazon-de-seller-links.yaml",
+      "sha256": "35298571a7b4a3de68790054b687bf7013afd69ed76ef9632da68a645886d805"
+    },
+    {
+      "path": "config/amazon-de.yaml",
+      "sha256": "efa70a40df8cd5286da59cd75d91a29a204aa1f485e3cde5b6066554b945d77e"
+    },
+    {
+      "path": "tests/ts/browser-context.test.ts",
+      "sha256": "f2d98360e169518a7e200ea7ef7e042af40fd7ff90c63c73b3cb7b44807bdef1"
+    },
+    {
+      "path": "tests/ts/config.test.ts",
+      "sha256": "f3cbc8fe9e042d523776462311e8bbe8c5e436230a605d6b352e6a949729a701"
+    },
+    {
+      "path": "tests/ts/detail.test.ts",
+      "sha256": "7e12fa045b831614fd418930e7e9b745d34949ff572e27f1042b22a44ae2b7df"
+    },
+    {
+      "path": "tests/ts/enrichment.test.ts",
+      "sha256": "d64e0ce72d3a39432eef7801109d67ce07db05843bc435af0125af49028345e4"
+    },
+    {
+      "path": "tests/ts/export.test.ts",
+      "sha256": "8fdcf6abbcb4cb137a7cf158b7ee92563b64bb8b4ac05301c8e5b6667c8b4b3b"
+    },
+    {
+      "path": "tests/ts/filter-sales.test.ts",
+      "sha256": "7632a4bfe0a3e528e31d6ec4b1e25a40ced1791158e93c7e43efb926a61c1e94"
+    },
+    {
+      "path": "tests/ts/helpers.ts",
+      "sha256": "cbb77f44f5f9100f48cd2b67759c6bc34bd6f2efc338d14abac5c6a758b24a10"
+    },
+    {
+      "path": "tests/ts/history-client.test.ts",
+      "sha256": "d069b3cc547ed059dfe0db9fd83b1d912d96bcd25868cbb0f25fdaf7c26583bc"
+    },
+    {
+      "path": "tests/ts/history-filter.test.ts",
+      "sha256": "f2a6651a53b91c67539c95d10ac86edc514a13dd7a036f4bb8c23c6de7128d36"
+    },
+    {
+      "path": "tests/ts/history-stage.test.ts",
+      "sha256": "df20bf48d4c7a4626345a148a6f34495a5573ecb43a9d4888396de3eb2941afd"
+    },
+    {
+      "path": "tests/ts/mcp-client.test.ts",
+      "sha256": "47bbf759c4b9eaf86f3188d3442b6ed2e1b3ff1eb337aae6ca6e00c11a08a70e"
+    },
+    {
+      "path": "tests/ts/parsing.test.ts",
+      "sha256": "bae4f6fdfcb2bb2fcc4e1736ca582d7b48dda658a9cf6f597085aa4f000c0a1a"
+    },
+    {
+      "path": "tests/ts/pipeline.test.ts",
+      "sha256": "d089028905c39dc63c975298c27feb0ecf3aecf9e4f008650e7e1cca221e48ae"
+    },
+    {
+      "path": "tests/ts/run-store.test.ts",
+      "sha256": "9de4315b45da139210b4d0fbfdbc3cdf1f8f5c857ca8a436a58b1ff0613549e1"
+    },
+    {
+      "path": "tests/ts/source-stores.test.ts",
+      "sha256": "248a4d3663983c668b1439bb503726437034e2d065d914b324a4a908d1d60fce"
+    },
+    {
+      "path": "tests/ts/store-optimization.test.ts",
+      "sha256": "20da0e9ff76320a427e497e81c79cbff3339607af01338ebb8d6e3eb0a14b0f3"
+    },
+    {
+      "path": "package.json",
+      "sha256": "b68ac8a7fc684a36c484dfc8a5e2739a4b41a349059bb0c8e5e45ee88cadd989"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "sha256": "94d1576d746102f677ac55bb770a18f99d44819bdd70ed3e1d2812e9dc5aa6c1"
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "sha256": "85cfddde4ca3026dfc4314c64dd121c750e7546c7bd45f564390880698525e52"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "51f82a4d97549aad3f3ca211b67e3599be9af66419209ad5ef59755b9bf9e213"
+    }
+  ]
+}
