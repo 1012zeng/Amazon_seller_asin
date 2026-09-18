@@ -1,0 +1,40 @@
+{
+  "name": "amazon-seller-asin",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.14.0 <25",
+    "pnpm": "11.5.2"
+  },
+  "scripts": {
+    "start": "node --expose-gc --import tsx src/cli.ts pipeline",
+    "pipeline": "node --expose-gc --import tsx src/cli.ts pipeline",
+    "stores": "node --expose-gc --import tsx src/cli.ts stores",
+    "prefilter": "node --expose-gc --import tsx src/cli.ts prefilter",
+    "enrich": "node --expose-gc --import tsx src/cli.ts enrich",
+    "filter": "node --expose-gc --import tsx src/cli.ts filter",
+    "sales-7d": "node --expose-gc --import tsx src/cli.ts sales-7d",
+    "detail": "node --expose-gc --import tsx src/cli.ts detail",
+    "export": "node --expose-gc --import tsx src/cli.ts export",
+    "status": "node --expose-gc --import tsx src/cli.ts status",
+    "check": "tsc --noEmit",
+    "test": "vitest run tests/ts",
+    "inspect-input": "node --import tsx src/cli.ts inspect-input"
+  },
+  "dependencies": {
+    "better-sqlite3": "13.0.2",
+    "exceljs": "4.4.0",
+    "linkedom": "0.18.13",
+    "playwright": "1.62.1",
+    "yaml": "2.9.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "9.6.0",
+    "@types/node": "24.10.0",
+    "tsx": "4.23.1",
+    "typescript": "5.9.3",
+    "vitest": "4.1.10"
+  },
+  "packageManager": "pnpm@11.5.2"
+}

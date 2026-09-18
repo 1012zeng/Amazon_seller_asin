@@ -1,0 +1,17 @@
+node_modules/
+output/
+outputs/
+data/
+config/local.yaml
+config/*.local.yaml
+.env
+.env.*
+!.env.example
+*.xlsx
+*.sqlite*
+*.log
+*.zip
+playwright-report/
+test-results/
+.cache/
+.development/

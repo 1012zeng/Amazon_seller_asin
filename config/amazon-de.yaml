@@ -1,0 +1,51 @@
+source:
+  path: "data/DE店铺库-中国地址.xlsx"
+  sheet: "卖家数据"
+  limit: 0
+amazon:
+  marketplace: "https://www.amazon.de"
+  site: "amazon.de"
+  marketplaceId: "A1PA6795UKMFR9"
+  postcode: "10115"
+  currency: "EUR"
+browser:
+  headed: true
+  executablePath: ""
+  controlPath: "/robots.txt"
+  navigationTimeoutMs: 60000
+  requestTimeoutMs: 30000
+  wafWaitSeconds: 30
+  pageRefreshAttempts: 1
+  browserRestartAttempts: 2
+  noResponseTimeoutMs: 60000
+  recoveryDelayMs: 5000
+stores:
+  concurrency:
+    initial: 3
+    min: 1
+    max: 3
+    successWindowPages: 10
+    cooldownMs: 60000
+  requestsPerSecond: 2
+  maxResponseBytes: 5242880
+  maxRetries: 3
+  maxBlockedAttempts: 5
+  blockedDelayMs: 5000
+  maxPagesPerStore: 0
+  fallbackMaxPagesPerStore: 400
+  proxyPorts: [7905, 7906, 7907, 7908]
+sellerSprite:
+  serviceUrl: "http://127.0.0.1:8012"
+  marketplace: "DE"
+  batchSize: 40
+  requestTimeoutMs: 300000
+filters:
+  maxReviewCountExclusive: 300
+  minRatingInclusive: 3.5
+  minPriceCentsInclusive: 799
+  maxPriceCentsInclusive: 6000
+  maxVariations: 3
+  maxAgeDays: 180
+  sales7dDailySalesMinimum: 3
+output:
+  root: "output"
