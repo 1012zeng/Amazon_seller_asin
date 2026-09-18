@@ -5,7 +5,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import type { AppConfig } from "./types.js";
 
-export const WORKFLOW = "de-seller-library-180d-all-sales7d-v1";
+export const WORKFLOW = "de-seller-library-180d-all-sales7d-na-v2";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const hash = (value: string): string => createHash("sha256").update(value).digest("hex");
 export function codeFingerprint(): string {
@@ -18,7 +18,7 @@ export function codeFingerprint(): string {
 }
 export function effectiveConfigHash(config: AppConfig): string { return hash(JSON.stringify(config)); }
 export function runContractHash(config: AppConfig, sourceHash: string, asOfDate: string, fingerprint = codeFingerprint()): string {
-  return hash(JSON.stringify({ workflow: WORKFLOW, schema: 18, effectiveConfigHash: effectiveConfigHash(config), sourceHash, asOfDate, fingerprint }));
+  return hash(JSON.stringify({ workflow: WORKFLOW, schema: 19, effectiveConfigHash: effectiveConfigHash(config), sourceHash, asOfDate, fingerprint }));
 }
 export function releaseInfo(): Record<string, string> {
   const version = String(JSON.parse(readFileSync(path.join(root, "package.json"), "utf8")).version);

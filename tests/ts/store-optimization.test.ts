@@ -259,7 +259,7 @@ describe("store pagination and structural recovery", () => {
     store.close();
   });
 
-  it.each([9, 13, 14, 15, 16, 17])("refuses incompatible schema v%d without migrating it", (schemaVersion) => {
+  it.each([9, 13, 14, 15, 16, 17, 18])("refuses incompatible schema v%d without migrating it", (schemaVersion) => {
     const { store } = runFixture();
     const runDir = store.runDir;
     store.db.pragma(`user_version = ${schemaVersion}`);

@@ -10,7 +10,7 @@ import { runFixture, occurrence, pageResult } from "./helpers.js";
 describe("isolated workflow and resume contracts", () => {
   it("reopens compatible runs with a frozen reference date and no historical database", () => {
     const { store } = runFixture(); const dir = store.runDir;
-    expect(store.summary()).toMatchObject({ schemaVersion: 18, historyFilter: { enabled: false, status: "skipped" } });
+    expect(store.summary()).toMatchObject({ schemaVersion: 19, historyFilter: { enabled: false, status: "skipped" } });
     expect(store.db.prepare("SELECT COUNT(*) n FROM source_products").get()).toEqual({ n: 0 });
     store.close(); const reopened = new RunStore(dir);
     try { expect(reopened.getAsOfDate()).toBe("2026-08-13"); expect(reopened.database.integrityCheck()).toBe("ok"); } finally { reopened.close(); }

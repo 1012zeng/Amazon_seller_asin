@@ -211,8 +211,8 @@ export interface ExportRow {
   sales_7d_minimum_met: "yes" | null;
   unit_price_cents: number;
   date_first_available: string;
-  review_count: number;
-  rating: number;
+  review_count: number | null;
+  rating: number | null;
   fulfillment: string;
   variation_count: number;
   title: string;

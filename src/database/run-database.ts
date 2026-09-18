@@ -2,7 +2,7 @@ import { existsSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import Database from "better-sqlite3";
 
-export const SCHEMA_VERSION = 18;
+export const SCHEMA_VERSION = 19;
 
 export class RunDatabase {
   readonly runDir: string;
@@ -297,8 +297,8 @@ export class RunDatabase {
         sales_7d_minimum_met TEXT CHECK(sales_7d_minimum_met IS NULL OR sales_7d_minimum_met='yes'),
         unit_price_cents INTEGER NOT NULL,
         date_first_available TEXT NOT NULL,
-        review_count INTEGER NOT NULL,
-        rating REAL NOT NULL,
+        review_count INTEGER,
+        rating REAL,
         fulfillment TEXT NOT NULL,
         variation_count INTEGER NOT NULL,
         title TEXT NOT NULL DEFAULT '',
@@ -323,9 +323,9 @@ export class RunDatabase {
         FOREIGN KEY(asin) REFERENCES cleaned_products(asin) ON DELETE CASCADE
       ) WITHOUT ROWID;
       CREATE INDEX idx_detail_tasks_state ON asin_detail_tasks(state,asin);
-      PRAGMA user_version = 18;
+      PRAGMA user_version = 19;
     `);
-    this.connection.pragma("user_version = 18");
+    this.connection.pragma("user_version = 19");
     this.createAuditView();
   }
 

@@ -1,5 +1,6 @@
 import { createHash } from "node:crypto";
 import { parseHTML } from "linkedom";
+import { REVIEW_COUNT_SELECTOR } from "./listing-selectors.js";
 import type { StoreAsinOccurrence, StorePageParseResult } from "../shared/types.js";
 
 export interface StoreCardSnapshot {
@@ -192,7 +193,7 @@ export function parseStorePage(html: string, status: number, requestUrl: string,
     paginationTexts: [...document.querySelectorAll(".s-pagination-strip .s-pagination-item")].map((node) => cleanText(node.textContent)),
     cards: [...document.querySelectorAll<HTMLElement>("[data-component-type='s-search-result'][data-asin]")].map((card) => {
       const image = card.querySelector("img.s-image, img[data-image-latency]");
-      return { asin: card.dataset.asin ?? "", title: cardText(card, "h2 span, h2"), listingHref: card.querySelector("h2 a, a.a-link-normal.s-no-outline")?.getAttribute("href") ?? "", imageUrl: cleanText(image?.getAttribute("src") || image?.getAttribute("data-src")), reviewText: cardText(card, ".s-underline-text, a[href*='#customerReviews'] span, [aria-label*='ratings']"), ratingText: cardText(card, "i.a-icon-star-small span.a-icon-alt, span.a-icon-alt"), priceText: firstEurPriceText(card) };
+      return { asin: card.dataset.asin ?? "", title: cardText(card, "h2 span, h2"), listingHref: card.querySelector("h2 a, a.a-link-normal.s-no-outline")?.getAttribute("href") ?? "", imageUrl: cleanText(image?.getAttribute("src") || image?.getAttribute("data-src")), reviewText: cardText(card, REVIEW_COUNT_SELECTOR), ratingText: cardText(card, "i.a-icon-star-small span.a-icon-alt, span.a-icon-alt"), priceText: firstEurPriceText(card) };
     }), responseBytes: Buffer.byteLength(html, "utf8"), fetchMs: 0, contentType: "text/html", declaredLength: Buffer.byteLength(html, "utf8"),
   }, sellerId, page, marketplace, marketplaceId);
 }

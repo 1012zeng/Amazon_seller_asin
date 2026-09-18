@@ -1,4 +1,5 @@
 import type { Page } from "playwright";
+import { REVIEW_COUNT_SELECTOR } from "../amazon/listing-selectors.js";
 import type { StoreDocumentSnapshot } from "../amazon/parsing.js";
 import type { ProductSellerDocumentSnapshot } from "../amazon/product-seller.js";
 
@@ -95,7 +96,7 @@ export async function fetchProductSellerSnapshot(page: Page, url: string, timeou
 }
 
 export async function fetchStoreSnapshot(page: Page, url: string, timeoutMs: number, maxResponseBytes: number): Promise<StoreDocumentSnapshot> {
-  const snapshot = await page.evaluate(async ({ target, timeout, byteLimit }) => {
+  const snapshot = await page.evaluate(async ({ target, timeout, byteLimit, reviewCountSelector }) => {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), timeout);
     const started = performance.now();
@@ -142,7 +143,7 @@ export async function fetchStoreSnapshot(page: Page, url: string, timeoutMs: num
             title: clean(card.querySelector("h2 span, h2")?.textContent),
             listingHref: card.querySelector("h2 a, a.a-link-normal.s-no-outline")?.getAttribute("href") ?? "",
             imageUrl: clean(image?.getAttribute("src") || image?.getAttribute("data-src")),
-            reviewText: clean(card.querySelector(".s-underline-text, a[href*='#customerReviews'] span, [aria-label*='ratings']")?.textContent),
+            reviewText: clean(card.querySelector(reviewCountSelector)?.textContent),
             ratingText: clean(card.querySelector("i.a-icon-star-small span.a-icon-alt, span.a-icon-alt")?.textContent),
             priceText: [...card.querySelectorAll(".a-price .a-offscreen")].map((node) => clean(node.textContent)).find((value) => /(?:EUR\s*\d|\d[\d.,]*\s*€)/i.test(value)) ?? "",
           };
@@ -151,7 +152,7 @@ export async function fetchStoreSnapshot(page: Page, url: string, timeoutMs: num
     } finally {
       clearTimeout(timer);
     }
-  }, { target: url, timeout: timeoutMs, byteLimit: maxResponseBytes });
+  }, { target: url, timeout: timeoutMs, byteLimit: maxResponseBytes, reviewCountSelector: REVIEW_COUNT_SELECTOR });
   validateStoreResponseEnvelope(snapshot.contentType, snapshot.declaredLength, snapshot.responseBytes, maxResponseBytes);
   return snapshot;
 }

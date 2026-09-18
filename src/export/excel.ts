@@ -74,7 +74,7 @@ function exportValues(row: ExportRow, config: AppConfig): ExcelJS.CellValue[] {
   return [
     hyperlink(row.site, config.amazon.marketplace), hyperlink(row.image_url, row.image_url), hyperlink(row.asin, row.product_url), row.store_name,
     hyperlink(row.store_url, row.store_url), row.child_sales_30d ?? "", row.sales_7d_minimum_met ?? "", row.unit_price_cents / 100,
-    new Date(`${row.date_first_available}T00:00:00.000Z`), row.review_count, row.rating, row.fulfillment, row.variation_count,
+    new Date(`${row.date_first_available}T00:00:00.000Z`), row.review_count ?? "NA", row.rating ?? "NA", row.fulfillment, row.variation_count,
     checkedText(row.title, row.asin, "标题"), checkedText(row.category, row.asin, "类目"), featureText(row.features_json, row.asin),
     checkedText(row.overviews ?? "", row.asin, "详情"), checkedText(row.brand, row.asin, "品牌"),
     hyperlink(checkedText(row.brand_url, row.asin, "品牌链接"), row.brand_url),
